@@ -16,7 +16,7 @@ public class BaseFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
-        System.out.println("=====>"+request.getContextPath());
+//        System.out.println("=====>"+request.getContextPath());
         filterChain.doFilter(servletRequest,servletResponse);
     }
 
