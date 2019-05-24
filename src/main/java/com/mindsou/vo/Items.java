@@ -2,6 +2,7 @@ package com.mindsou.vo;
 
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,7 +25,7 @@ public class Items {
 
     //非空校验
     @NotNull(message="{items.createtime.isNUll}")
-    @NotEmpty(message="{items.createtime.isNUll}")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createtime;
 
     public Integer getId() {

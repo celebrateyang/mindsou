@@ -19,9 +19,11 @@ public class BaseDataBeforeViewHandler implements BeforeViewHandler {
         modelAndView.addObject("basePath",basePath);
         //为js文件添加参数，防止缓存
         String mindVersion = request.getServletContext().getInitParameter("mindVersion");
-        if(StringUtils.isEmpty(mindVersion))
-            modelAndView.addObject("mathRandom",Math.random());
-        else
-            modelAndView.addObject("mathRandom",mindVersion);
+        if(StringUtils.isEmpty(mindVersion)) {
+            modelAndView.addObject("mathRandom", Math.random());
+        }
+        else {
+            modelAndView.addObject("mathRandom", mindVersion);
+        }
     }
 }

@@ -16,8 +16,8 @@
     <input type="text" name="name" value="${items.name}"/>
     <input type="text" name="price"/>
     <input type="text" name="pic"/>
-
-    <input type="text" name="createtime" value="<fmt:formatDate value="${items.createtime}" var="createtime" pattern="yyyy-MM-dd"/>"/>
+    <input type="text" name="createtime"/>
+<%--<input type="text" name="createtime" value="<fmt:formatDate value="${items.createtime}" var="createtime" pattern="yyyy-MM-dd"/>"/>--%>
     <input type="submit" value="submit">
 </form>
 </body>
