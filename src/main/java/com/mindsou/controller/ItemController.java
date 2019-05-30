@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,13 +19,18 @@ import java.util.List;
 @Controller
 @RequestMapping("item")
 public class ItemController {
-
     @RequestMapping("/goitems")
     public String goItem(){
         return "item/items";
     }
     @RequestMapping(value = "/goitems",method = RequestMethod.POST)
-    public String doItem(@Validated Items items, BindingResult bindingResult, Model model){
+    public String doItem(@Validated Items items, BindingResult bindingResult, Model model,Integer[] haha){
+        for (Integer ha : haha) {
+            System.out.println("ha=>"+ha);
+        }
+
+        System.out.println("=========================");
+        System.out.println(haha);
         if(bindingResult.hasErrors()){
             List<ObjectError> allErrors = bindingResult.getAllErrors();
 
@@ -37,5 +43,7 @@ public class ItemController {
         System.out.println("name=>"+items.getName());
         return "item/items";
     }
+
+
 
 }

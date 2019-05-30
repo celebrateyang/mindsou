@@ -19,7 +19,7 @@ public class Items {
     @Size(min=1,max=30,message="{items.name.length.error}")
     private String name;
 
-    private Float price;
+    private double price;
 
     private String pic;
 
@@ -44,11 +44,11 @@ public class Items {
         this.name = name;
     }
 
-    public Float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -66,5 +66,16 @@ public class Items {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+    public Items(Integer id, String name, double price, String pic, Date createtime) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.pic = pic;
+        this.createtime = createtime;
+    }
+
+    public Items() {
     }
 }
