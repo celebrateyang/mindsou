@@ -1,5 +1,6 @@
 package com.mindsou.controller;
 
+import com.mindsou.service.AsycService;
 import com.mindsou.vo.All;
 import com.mindsou.vo.Items;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +20,10 @@ import java.util.spi.LocaleServiceProvider;
 @Controller
 @RequestMapping("all")
 public class AllController {
+
+    @Resource
+    AsycService asycService;
+
     @ModelAttribute("all")
     public All initValue(){
         All all = new All();
@@ -41,6 +47,14 @@ public class AllController {
             System.out.println("s=====>"+s);
         }
 
+        return "item/all";
+    }
+
+    @RequestMapping(value = "/testAsync",method = RequestMethod.GET)
+    public String testAsync(){
+        System.out.println("start===>");
+        asycService.async();
+        System.out.println("end===>");
         return "item/all";
     }
 }
