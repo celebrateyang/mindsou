@@ -22,7 +22,7 @@ public class LazySingleton {
     3. 设置instance指向刚分配的内存地址，此时instance==内存地址，此时对象初始化还没有完成
     2. 初始化对象
      */
-    private static volatile LazySingleton lazySingleton;//为什么用volatile 关键字？
+    private static volatile LazySingleton lazySingleton;//为什么用volatile 关键字？ 如果不加volatile,可能会使后面的线程拿到一个半初始化的对象
     private LazySingleton(){
         System.out.println(Thread.currentThread().getName()+"\t这里是构造方法LazySingleton(),应该只被打印一次 ");
     }
