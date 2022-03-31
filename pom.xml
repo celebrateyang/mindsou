@@ -8,7 +8,7 @@
   <name>MindSou Maven Webapp</name>
   <url>http://maven.apache.org</url>
     <properties>
-        <spring.version>4.2.2.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
